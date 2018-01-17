@@ -1,6 +1,6 @@
-# To be updated 
+## To be updated 
 
-Tic tac toe game build with React
+Tic Tac Toe game build with React
 
 This plsroject was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
