@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import NavDrawer from '../components/NavDrawer'
+import {Header, Main} from '../styled/Template'
 
 const style = {
     margin: 12,
@@ -13,9 +14,10 @@ class Template extends Component {
             <MuiThemeProvider>
                 <div>
                    <NavDrawer/>
-                    <main>
+                   <Header>Tic Tac Toe</Header>
+                    <Main>
                         {this.props.children}
-                    </main>
+                    </Main>
                 </div>
             </MuiThemeProvider>
         )
