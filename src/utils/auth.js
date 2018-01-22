@@ -4,7 +4,7 @@ const clientId = 'EKqJGe16jJJLM33j40o2Umau4ILeB6CJ'
 
 class AuthService {
     constructor() {
-        this.lock = new Auth0lock(clienId, authDomain, {
+        this.lock = new Auth0lock(clientId, authDomain, {
             auth: {
                 params: {
                     scope: 'opneid email'
@@ -33,7 +33,7 @@ class AuthService {
         localStorage.setItem('exp', exp * 1000)
     }
     isCurrent = () => {
-        left expString = localStorage.getItem('exp')
+        let expString = localStorage.getItem('exp')
         if (!expString) {
             localStorage.removeItem('idToken')
             return false
@@ -59,9 +59,13 @@ class AuthService {
         }
     }
 
-    logout = () =>{
-        localStorage.removeItem('idToken')
-        localStorage.removeItem('exp')
-        location.reload()
-    }
+    logout = () => {
+		localStorage.removeItem('idToken')
+		localStorage.removeItem('exp')
+		//location.reload()
+	}
 }
+
+const auth = new AuthService()
+    // exporting allowing us to use it in any pther file
+    export default auth
